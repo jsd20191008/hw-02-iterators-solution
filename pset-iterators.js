@@ -22,7 +22,7 @@ arrow functions for your callbacks
 const presidents = require('./us-presidents.js') // <- DO NOT Remove; this represents an array consisting of U.S. Presidents
 
 /***********
-Sample Problem:
+Problem 1:
 
 1. Using the `presidents` array, return the name of the
 first president that was a member of the "Whig" party.
@@ -32,7 +32,7 @@ declared with const
 2. Print `firstWhigPresident` to the console
 
 ************/
-console.log('Sample Problem:')
+console.log('Problem 1:')
 
 // Add your code below this line
 
@@ -49,7 +49,7 @@ console.log('')
 console.log('-----------------')
 
 /***********
-Problem 1:
+Problem 2:
 
 1. Using the `presidents` array, return a list of all the
 presidents whose first name was "James".
@@ -59,7 +59,7 @@ declared with const
 2. Print `presidentsNamedJames` to the console
 
 ************/
-console.log('Problem 1:')
+console.log('Problem 2:')
 
 // Add your code below this line
 
@@ -77,7 +77,7 @@ console.log('')
 console.log('-----------------')
 
 /***********
-Problem 2:
+Problem 3:
 
 1. Using the `presidents` array, return a list of the
 parties associated each of the presidents.
@@ -91,7 +91,7 @@ declared with const
 Tip: your new array should contain 45 elements
 
 ************/
-console.log('Problem 2:')
+console.log('Problem 3:')
 
 // Add your code below this line
 
@@ -108,7 +108,7 @@ console.log('')
 console.log('-----------------')
 
 /***********
-Problem 3:
+Problem 4:
 
 1. Using the `presidents` array, return a
 list of the presidents who took office
@@ -117,12 +117,12 @@ between 1850 and 1900. Save the data in a variable called `presidentsBetween1850
 2. Print `presidentsBetween1850and1900` to the console
 
 ************/
-console.log('Problem 3:')
+console.log('Problem 4:')
 
 // Add your code below this line
 
 const presidentsBetween1850and1900 = presidents.filter((president) => {
-  const tookOfficeYear = parseInt(president.took_office.substring(0, 4))
+  const tookOfficeYear = parseInt(president.took_office.split('-')[0])
 
   return tookOfficeYear >= 1850 && tookOfficeYear < 1900
 })
@@ -135,7 +135,7 @@ console.log('')
 console.log('-----------------')
 
 /***********
-Problem 4:
+Problem 5:
 
 1. Using the `presidents` array, return a list of the
 presidents who are still alive today.
@@ -145,7 +145,7 @@ declared with const
 2. Print `livingPresidents` to the console
 
 ************/
-console.log('Problem 4:')
+console.log('Problem 5:')
 
 // Add your code below this line
 
@@ -162,7 +162,7 @@ console.log('')
 console.log('-----------------')
 
 /***********
-Problem 5:
+Problem 6:
 
 1. Using the `presidents` array,
 return the name of the first "Republican" president.
@@ -172,7 +172,7 @@ called `firstRepublican`, declared with const
 2. Print `firstRepublican` to the console
 
 ************/
-console.log('Problem 5:')
+console.log('Problem 6:')
 
 // Add your code below this line
 
@@ -188,7 +188,7 @@ console.log('')
 console.log('-----------------')
 
 /***********
-Problem 6:
+Problem 7:
 
 1. Using the `presidents` array, return a
 list of the presidents who served less than 4 years
@@ -198,7 +198,7 @@ called `shortTermPresidents`, declared with const
 2. Print `shortTermPresidents` to the console
 
 ************/
-console.log('Problem 6:')
+console.log('Problem 7:')
 
 // Add your code below this line
 const formerPresidents = presidents.filter(president => {
@@ -206,8 +206,8 @@ const formerPresidents = presidents.filter(president => {
 })
 
 const shortTermPresidents = formerPresidents.filter((president) => {
-  const tookOfficeYear = parseInt(president.took_office.substring(0, 4))
-  const leftOfficeYear = parseInt(president.left_office.substring(0, 4))
+  const tookOfficeYear = parseInt(president.took_office.split('-')[0])
+  const leftOfficeYear = parseInt(president.left_office.split('-')[0])
 
   return leftOfficeYear - tookOfficeYear < 4
 })
